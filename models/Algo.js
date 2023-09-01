@@ -1,10 +1,7 @@
-// Dependencies
 const mongoose = require("mongoose");
 
-// Schema instance
 const Schema = mongoose.Schema;
 
-//Algorithm object
 const AlgoSchema = new Schema({
     algorithm: {
         type: String,
@@ -58,6 +55,5 @@ const AlgoSchema = new Schema({
     }
 });
 
-// Export
 const Algo = mongoose.model("Algo", AlgoSchema)
 module.exports = Algo;

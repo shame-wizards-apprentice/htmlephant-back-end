@@ -1,8 +1,6 @@
-// Dependencies
 const express = require("express");
 const db = require("../models");
 
-// Express router instance
 const router = express.Router()
 
 // Algorithm Seeds
@@ -60,7 +58,7 @@ router.get("/seedalgo", (req, res) => {
     });
 });
 
-// API route for all algorithms
+// All algorithms
 router.get("/api/algo", (req, res) => {
     db.Algo.find({}).then(data => {
         data ? res.json(data) : res.status(404).send("FOOL! You have lost the algorithms!")
@@ -69,7 +67,7 @@ router.get("/api/algo", (req, res) => {
     });
 });
 
-// API route for one random algorithm
+// One random algorithm
 router.get("/api/random", (req, res) => {
     db.Algo.find({}).then(data => {
         if (data) {
@@ -83,7 +81,7 @@ router.get("/api/random", (req, res) => {
     })
 });
 
-// API route for one random hard algorithm
+// One hard algorithm
 router.get("/api/hard", (req, res) => {
     db.Algo.find({ difficulty: "Hard" }).then(data => {
         if (data) {
@@ -97,7 +95,7 @@ router.get("/api/hard", (req, res) => {
     })
 });
 
-// API route for one medium algorithm
+// One medium algorithm
 router.get("/api/medium", (req, res) => {
     db.Algo.find({ difficulty: "Medium" }).then(data => {
         if (data) {
@@ -111,7 +109,7 @@ router.get("/api/medium", (req, res) => {
     })
 });
 
-// API route for one easy algorithm
+// One easy algorithm
 router.get("/api/easy", (req, res) => {
     db.Algo.find({ difficulty: "Easy" }).then(data => {
         if (data) {

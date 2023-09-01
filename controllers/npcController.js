@@ -1,8 +1,6 @@
-// Dependencies
 const express = require("express");
 const db = require("../models");
 
-// Express router instance
 const router = express.Router()
 
 // NPC Seeds
@@ -39,7 +37,7 @@ router.get("/seednpc", (req, res) => {
     });
 });
 
-// API route for NPC characters
+// All NPC characters
 router.get("/api/npc", (req, res) => {
     db.Npc.find({}).then(data => {
         data ? res.json(data) : res.status(404).send("You have FAILED!")
