@@ -9,12 +9,12 @@ const router = express.Router()
 // User signup
 router.post("/signup", (req, res) => {
     db.User.create({
-        username: req.body.username,
-        password: bcrypt.hashSync(req.body.password, 10),
-        character: req.body.character,
-        level: 1,
-        health: 3,
-        keys: 0
+        "username": req.body.username,
+        "password": bcrypt.hashSync(req.body.password, 10),
+        "character": req.body.character,
+        "level": 1,
+        "health": 3,
+        "keys": 0
     }).then(data => {
         if (data) {
             const token = jwt.sign({

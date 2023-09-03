@@ -50,7 +50,7 @@ const AlgoSchema = new Schema({
         default: "Easy"
     },
     argsAndOutput: {
-        type: String,
+        type: Object,
         required: true
     }
 });
