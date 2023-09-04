@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const whitelist = ["https://wizards-and-whiteboards.herokuapp.com", "http://localhost:3000"]
+const whitelist = ["https://wizards-and-whiteboards-game-330d091e061a.herokuapp.com/", "http://localhost:3000"]
 
 const corsOptions = {
     origin: whitelist,
